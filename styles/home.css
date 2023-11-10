@@ -1,0 +1,205 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.main {
+    width: 100%;
+    height: 100%;
+    background-color: #232323;
+    position: absolute;
+    z-index: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+#table-rim {
+    z-index: 5;
+    background-color: rgb(0, 125, 0);
+    width: 120%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    transition: 0.75s;
+}
+#table {
+    z-index: 6;
+    background-color: rgb(25, 167, 25);
+    width: 120%;
+    height: 45%;
+    position: absolute;
+    bottom: 0;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+#title {
+    color: #ffffff;
+    font-family: arial;
+    font-size: 4.5rem;
+    margin-top: 10%;
+    text-shadow: 3px 3px #a5a5a575;
+    transition: 1s;
+}
+#start {
+    width: 10%;
+    height: 20%;
+    border-radius: 50px;
+    background-color: rgb(0, 126, 0);
+    position: absolute;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#balance {
+    width: 450px;
+    height: 150px;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.322);
+    border-bottom-left-radius: 50px;
+    color: white;
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+    font-weight: bold;
+    display: flex;
+    transition: 0.25s;
+}
+#money{
+    display: flex;
+    margin: 10px;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+#balance:hover {
+    transform: translateY(10px);
+}
+#play-area {
+    width: 750px;
+    height: 100%;
+    background-color: rgba(0, 126, 0, 0.747);
+    position: absolute;
+    display: flex;
+    margin-bottom: -200%;
+    transition: 1.5s;
+    flex-direction: column;
+    z-index: 0;
+    align-items: center;
+    border-top-left-radius: 75%;
+    border-top-right-radius: 75%;
+}
+.dealer-side {
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.player-side {
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-color: #c00000;
+    border-top-width: 10px;
+    border-top-style: solid;
+}
+#card {
+    width: 30%;
+    height: 80%;
+    background-color: transparent;
+    margin: 10px;
+    margin-bottom: 25px;
+    z-index: 3;
+}
+#card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+#card-front, #card-back {
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+#card-front {
+    background-color: black;
+}
+#card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+}
+
+#bet-space {
+    position: absolute;
+    bottom: 0;
+    width: 75%;
+    height: 20%;
+}
+#subtract-bet, #add-bet {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(0, 0, 0, 0.322);
+    border-radius: 15px;
+    font-size: 5rem;
+    display: flex;
+    color: white;
+    align-items: flex-end;
+    justify-content: center;
+    z-index: 3;
+    cursor: pointer;
+}
+#subtract-bet {
+    left: 0;
+}
+#add-bet {
+    right: 0;
+}
+#bet, #confirm-bet {
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    background-color: rgba(0, 0, 0, 0.322);
+    bottom: 0;
+    color: white;
+    left: 42%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+#confirm-bet {
+    height: 6rem;
+    bottom: 100%;
+    border-radius: 25px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 3;
+}
+
+
+
+
+/* .background-area {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+} */
