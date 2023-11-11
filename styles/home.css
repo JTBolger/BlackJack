@@ -36,6 +36,7 @@
     justify-content: center;
     align-items: center;
     transition: 1s;
+    overflow: hidden;
 }
 #title {
     color: #ffffff;
@@ -67,6 +68,7 @@
     font-weight: bold;
     display: flex;
     transition: 0.25s;
+    opacity: 0;
 }
 #money{
     display: flex;
@@ -114,13 +116,20 @@
     border-top-width: 10px;
     border-top-style: solid;
 }
-#card {
+#pCard1, #pCard2, #pCard3, #pCard4, #pCard5, #pCard6, #pCard7, #pCard8, #pCard9, #dCard1, #dCard2, #dCard3, #dCard4, #dCard5, #dCard6, #dCard7, #dCard8, #dCard9 {
     width: 30%;
     height: 80%;
     background-color: transparent;
     margin: 10px;
     margin-bottom: 25px;
     z-index: 3;
+    /* position: absolute; */
+    background-color: white;
+    display: none;
+    border-radius: 10px;
+}
+#dCard1, #dCard2, #dCard3, #dCard4, #dCard5, #dCard6, #dCard7, #dCard8, #dCard9 {
+    margin-top: 45px;
 }
 #card-inner {
     position: relative;
@@ -139,8 +148,9 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-#card-front {
-    background-color: black;
+#pCard1-front, #pCard2-front, #pCard3-front, #pCard4-front, #pCard5-front, #pCard6-front, #pCard7-front, #pCard8-front, #pCard9-front, #dCard1-front, #dCard2-front, #dCard3-front, #dCard4-front, #dCard5-front, #dCard6-front, #dCard7-front, #dCard8-front, #dCard9-front {
+    background-color: white;
+    border-radius: 10px;
 }
 #card-back {
     background-color: white;
@@ -166,6 +176,7 @@
     justify-content: center;
     z-index: 3;
     cursor: pointer;
+    user-select: none;
 }
 #subtract-bet {
     left: 0;
