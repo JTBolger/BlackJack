@@ -223,6 +223,29 @@
     cursor: pointer;
     z-index: 3;
 }
+#hit-button, #stay-button {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background-color: rgba(0, 0, 0, 0.322);
+    border-radius: 15px;
+    font-size: 2rem;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    cursor: pointer;
+    user-select: none;
+}
+#hit-button {
+    display: none;
+    left: 85%;
+}
+#stay-button {
+    display: none;
+    right: 85%;
+}
 
 
 
