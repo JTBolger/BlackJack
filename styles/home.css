@@ -69,6 +69,7 @@
     display: flex;
     transition: 0.25s;
     opacity: 0;
+    z-index: 100;
 }
 #money{
     display: flex;
@@ -103,6 +104,23 @@
     align-items: center;
     flex-direction: row;
 }
+#dealer-value, #player-value {
+    position: absolute;
+    width: 6rem;
+    height: 2rem;
+    background-color: rgba(0, 0, 0, 0.322);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+#dealer-value {
+    bottom: 50%;
+}
+#player-value {
+    top: 50%;
+}
 .player-side {
     width: 100%;
     height: 50%;
@@ -113,7 +131,7 @@
     align-items: center;
     flex-direction: row;
     border-color: #c00000;
-    border-top-width: 10px;
+    border-top-width: 0.25rem;
     border-top-style: solid;
 }
 #pCard1, #pCard2, #pCard3, #pCard4, #pCard5, #pCard6, #pCard7, #pCard8, #pCard9, #dCard1, #dCard2, #dCard3, #dCard4, #dCard5, #dCard6, #dCard7, #dCard8, #dCard9 {
