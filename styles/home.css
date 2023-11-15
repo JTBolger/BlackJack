@@ -136,7 +136,7 @@
 }
 #pCard1, #pCard2, #pCard3, #pCard4, #pCard5, #pCard6, #pCard7, #pCard8, #pCard9, #dCard1, #dCard2, #dCard3, #dCard4, #dCard5, #dCard6, #dCard7, #dCard8, #dCard9 {
     width: 30%;
-    height: 80%;
+    /* height: 80%; */
     background-color: transparent;
     margin: 10px;
     margin-bottom: 25px;
