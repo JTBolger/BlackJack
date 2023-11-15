@@ -155,7 +155,7 @@ function drawCard(dealingCard) {
         dCard1 = randomCard(deck)
         addCardToDealerHand(dCard1)
         console.log("dCard1 = "+dCard1)
-        document.getElementById("dCard1-front").innerHTML = dCard1
+        document.getElementById("dCard1-front").innerHTML = changePicture(dCard1)
         calculateDealerValue(dealerHand)
         document.getElementById("dealer-value").innerHTML = Value(dCard1)
         changePicture(dCard1)
@@ -176,7 +176,7 @@ function drawCard(dealingCard) {
         dCard3 = randomCard(deck)
         addCardToDealerHand(dCard3)
         console.log("dCard3 = "+dCard3)
-        document.getElementById("dCard3-front").innerHTML = dCard3
+        document.getElementById("dCard3-front").innerHTML = changePicture(dCard3)
         calculateDealerValue(dealerHand)
         changePicture(dCard3)
         hitNumber = 13
@@ -186,7 +186,7 @@ function drawCard(dealingCard) {
         dCard4 = randomCard(deck)
         addCardToDealerHand(dCard4)
         console.log("dCard4 = "+dCard4)
-        document.getElementById("dCard4-front").innerHTML = dCard4
+        document.getElementById("dCard4-front").innerHTML = changePicture(dCard4)
         calculateDealerValue(dealerHand)
         changePicture(dCard4)
         hitNumber = 14
@@ -196,7 +196,7 @@ function drawCard(dealingCard) {
         dCard5 = randomCard(deck)
         addCardToDealerHand(dCard5)
         console.log("dCard5 = "+dCard5)
-        document.getElementById("dCard5-front").innerHTML = dCard5
+        document.getElementById("dCard5-front").innerHTML = changePicture(dCard5)
         calculateDealerValue(dealerHand)
         changePicture(dCard5)
         hitNumber = 15
@@ -205,7 +205,7 @@ function drawCard(dealingCard) {
         dCard6.style.display = "block"
         dCard6 = randomCard(deck)
         console.log("dCard6 = "+dCard6)
-        document.getElementById("dCard6-front").innerHTML = dCard6
+        document.getElementById("dCard6-front").innerHTML = changePicture(dCard6)
         calculateDealerValue(pCard6)
         changePicture(dCard6)
         hitNumber = 16
@@ -214,7 +214,7 @@ function drawCard(dealingCard) {
         dCard7.style.display = "block"
         dCard7 = randomCard(deck)
         console.log("dCard7 = "+dCard7)
-        document.getElementById("dCard7-front").innerHTML = dCard7
+        document.getElementById("dCard7-front").innerHTML = changePicture(dCard7)
         calculateDealerValue(dCard7)
         changePicture(dCard7)
         hitNumber = 17
@@ -223,7 +223,7 @@ function drawCard(dealingCard) {
         dCard8.style.display = "block"
         dCard8 = randomCard(deck)
         console.log("dCard8 = "+dCard8)
-        document.getElementById("dCard8-front").innerHTML = dCard8
+        document.getElementById("dCard8-front").innerHTML = changePicture(dCard8)
         calculateDealerValue(dCard8)
         changePicture(dCard8)
         hitNumber = 18
@@ -232,7 +232,7 @@ function drawCard(dealingCard) {
         dCard9.style.display = "block"
         dCard9 = randomCard(deck)
         console.log("dCard9 = "+dCard9)
-        document.getElementById("dCard9-front").innerHTML = dCard9
+        document.getElementById("dCard9-front").innerHTML = changePicture(dCard9)
         calculateDealerValue(dCard9)
         changePicture(dCard9)
         hitNumber = 19
@@ -242,7 +242,7 @@ function drawCard(dealingCard) {
         pCard1 = randomCard(deck)
         addCardToPlayerHand(pCard1)
         console.log("pCard1 = "+pCard1)
-        document.getElementById("pCard1-front").innerHTML = pCard1
+        document.getElementById("pCard1-front").innerHTML = changePicture(pCard1)
         calculatePlayerValue(playerHand)
         hitNumber = 1
         changePicture(pCard1)
@@ -252,17 +252,18 @@ function drawCard(dealingCard) {
         pCard2 = randomCard(deck)
         addCardToPlayerHand(pCard2)
         console.log("pCard2 = "+pCard2)
-        document.getElementById("pCard2-front").innerHTML = pCard2
+        document.getElementById("pCard2-front").innerHTML = changePicture(pCard2)
         calculatePlayerValue(playerHand)
         hitNumber = 2
         changePicture(pCard2)
+        testForBlackjack()
     }
     else if (dealingCard == 12) {
         pCard3Style.style.display = "block"
         pCard3 = randomCard(deck)
         addCardToPlayerHand(pCard3)
         console.log("pCard3 = "+pCard3)
-        document.getElementById("pCard3-front").innerHTML = pCard3
+        document.getElementById("pCard3-front").innerHTML = changePicture(pCard3)
         calculatePlayerValue(playerHand)
         hitNumber = 3
         changePicture(pCard3)
@@ -272,7 +273,7 @@ function drawCard(dealingCard) {
         pCard4 = randomCard(deck)
         addCardToPlayerHand(pCard4)
         console.log("pCard4 = "+pCard4)
-        document.getElementById("pCard4-front").innerHTML = pCard4
+        document.getElementById("pCard4-front").innerHTML = changePicture(pCard4)
         calculatePlayerValue(playerHand)
         hitNumber = 4
         changePicture(pCard4)
@@ -282,7 +283,7 @@ function drawCard(dealingCard) {
         pCard5 = randomCard(deck)
         addCardToPlayerHand(pCard5)
         console.log("pCard5 = "+pCard5)
-        document.getElementById("pCard5-front").innerHTML = pCard5
+        document.getElementById("pCard5-front").innerHTML = changePicture(pCard5)
         calculatePlayerValue(playerHand)
         hitNumber = 5
         changePicture(pCard5)
@@ -291,7 +292,7 @@ function drawCard(dealingCard) {
         pCard6.style.display = "block"
         pCard6 = randomCard(deck)
         console.log("pCard6 = "+pCard6)
-        document.getElementById("pCard6-front").innerHTML = pCard6
+        document.getElementById("pCard6-front").innerHTML = changePicture(pCard6)
         calculatePlayerValue(pCard6)
         hitNumber = 6
         changePicture(pCard6)
@@ -300,7 +301,7 @@ function drawCard(dealingCard) {
         pCard7.style.display = "block"
         pCard7 = randomCard(deck)
         console.log("pCard7 = "+pCard7)
-        document.getElementById("pCard7-front").innerHTML = pCard7
+        document.getElementById("pCard7-front").innerHTML = changePicture(pCard7)
         calculatePlayerValue(pCard7)
         hitNumber = 7
         changePicture(pCard7)
@@ -309,7 +310,7 @@ function drawCard(dealingCard) {
         pCard8.style.display = "block"
         pCard8 = randomCard(deck)
         console.log("pCard8 = "+pCard8)
-        document.getElementById("pCard8-front").innerHTML = pCard8
+        document.getElementById("pCard8-front").innerHTML = changePicture(pCard8)
         calculatePlayerValue(pCard8)
         hitNumber = 8
         changePicture(pCard8)
@@ -318,7 +319,7 @@ function drawCard(dealingCard) {
         pCard9.style.display = "block"
         pCard9 = randomCard(deck)
         console.log("pCard9 = "+pCard9)
-        document.getElementById("pCard9-front").innerHTML = pCard9
+        document.getElementById("pCard9-front").innerHTML = changePicture(pCard9)
         calculatePlayerValue(pCard9)
         hitNumber = 9
         changePicture(pCard9)
@@ -352,6 +353,10 @@ function drawCardFour() {
 }
 function drawCardFive() {
     drawCard(5)
+    calculateDealerValue()
+}
+function drawCardSix() {
+    drawCard(6)
     calculateDealerValue()
 }
 
@@ -529,14 +534,14 @@ function STAY() {
     stayButton.style.display = "none"
     hitNumber = 12;
     console.log("Player is staying on: " + playerValue);
-    document.getElementById("dCard2-front").innerHTML = dCard2;
+    document.getElementById("dCard2-front").innerHTML = changePicture(dCard2);
     document.getElementById("dealer-value").innerHTML = dealerValue;
     for (i=0; i<3; i++) {
         if (dealerValue < 17) {
             setTimeout(dealerHIT, 500)
         }
     }
-    testForWin()
+    setTimeout(testForWin, 1500)
     setTimeout(resetGame, 3000)
 }
 
@@ -544,9 +549,12 @@ function dealerHIT() {
     if (dealerValue < 17) {
         drawCardThree()
         if ((dealerValue + Value(dCard3)) < 17) {
-            drawCardFour()
+            setTimeout(drawCardFour, 500)
             if ((dealerValue + Value(dCard3) + Value(dCard4)) < 17) {
-                drawCardFive()
+                setTimeout(drawCardFive, 500)
+                if ((dealervalue + Value(dCard3) + Value(dCard4) + Value(dCard5)) < 17) {
+                    setTimeout(drawCardSix, 500)
+                }
             }
         }
     }
@@ -569,24 +577,48 @@ function testForBust(side) {
         }
     }
 }
+function testForBlackjack() {
+    if ((playerValue == 21) && (hitNumber == 2)) {
+        console.warn("Player Blackjack")
+        hitButton.style.display = "none"
+        stayButton.style.display = "none"
+        bank += (bet + (1.5*bet))
+        document.getElementById("player-value").style.color = "#10bb10"
+        setTimeout(resetGame, 3000)
+    }
+    else if ((dealerValue == 21) && (hitNumber == 2)) {
+        console.warn("Dealer Blackjack")
+        document.getElementById("dCard2-front").innerHTML = changePicture(dCard2);
+        hitButton.style.display = "none"
+        stayButton.style.display = "none"
+        document.getElementById("dealer-value").style.color = "#10bb10"
+        setTimeout(testForWin, 1500)
+        setTimeout(resetGame, 3000)
+    }
+}
 function testForWin() {
     if (playerValue > 21) {
         console.warn("Player Bust")
+        document.getElementById("player-value").style.color = "#bb1010"
     }
     else if ((playerValue > dealerValue) && (playerValue <= 21)) {
         console.warn("Player Win")
+        document.getElementById("player-value").style.color = "#10bb10" // green
+        document.getElementById("dealer-value").style.color = "#bb1010" // red
         bank += (bet*2)
     }
     else if (playerValue == dealerValue) {
         console.warn("Push")
         bank += bet
     }
-    else if ((playerValue <= 21) && (dealerValue >= 21)) {
+    else if ((playerValue <= 21) && (dealerValue > 21)) {
         console.warn("Dealer Bust")
+        document.getElementById("dealer-value").style.color = "#bb1010"
         bank += (bet*2)
     }
     else if ((playerValue <= dealerValue) && (dealerValue <= 21)) {
         console.warn("Dealer Win")
+        document.getElementById("dealer-value").style.color = "#10bb10"
     }
     else {
         console.error("testForWin Error")
@@ -642,6 +674,8 @@ function resetGame() {
     betDisplay.innerHTML = "$"+bet+".00"
     document.getElementById("dealer-value").innerHTML = "00"
     document.getElementById("player-value").innerHTML = "00"
+    document.getElementById("player-value").style.color = "#ffffff"
+    document.getElementById("dealer-value").style.color = "#ffffff"
     console.warn("Game Reset")
 }
 
@@ -701,687 +735,170 @@ var pCard2Front = document.getElementById("pCard2-front")
 var pCard3Front = document.getElementById("pCard3-front")
 var pCard4Front = document.getElementById("pCard4-front")
 var pCard5Front = document.getElementById("pCard5-front")
+var dCard1Front = document.getElementById("dCard1-front")
+var dCard2Front = document.getElementById("dCard2-front")
+var dCard3Front = document.getElementById("dCard3-front")
+var dCard4Front = document.getElementById("dCard4-front")
+var dCard5Front = document.getElementById("dCard5-front")
+
 function changePicture(cardPic) {
     if (cardPic == "AC") {
-        if (hitNumber==1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/2.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/2.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/2.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/2.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/2.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/2.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "2C") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/3.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/3.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/3.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/3.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/3.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/3.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "3C") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/4.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/4.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/4.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/4.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/4.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/4.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "4C") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/5.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/5.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/5.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/5.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/5.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/5.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "5C") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/6.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/6.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/6.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/6.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/6.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/6.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "6C") {
-        if (hitNumber==1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/7.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/7.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/7.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/7.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/7.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/7.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "7C") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/8.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/8.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/8.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/8.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/8.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/8.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "8C") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/9.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/9.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/9.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/9.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/9.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/9.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "9C") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/10.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/10.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/10.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/10.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/10.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/10.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "10C") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/11.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/11.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/11.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/11.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/11.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/11.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "JC") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/12.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/12.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/12.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/12.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/12.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/12.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "QC") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/13.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/13.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/13.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/13.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/13.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/13.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "KC") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/14.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/14.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/14.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/14.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/14.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/14.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
-
     // HEARTS //
-    else if (cardPic == "AH") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/15.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/15.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/15.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/15.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/15.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+    if (cardPic == "AH") {
+        return "<img src=\"images/Blackjack game/15.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "2H") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/16.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/16.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/16.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/16.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/16.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/16.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "3H") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/17.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/17.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/17.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/17.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/17.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/17.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "4H") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/18.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/18.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/18.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/18.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/18.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/18.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "5H") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/19.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/19.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/19.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/19.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/19.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/19.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "6H") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/20.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/20.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/20.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/20.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/20.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/20.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "7H") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/21.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/21.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/21.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/21.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/21.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/21.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "8H") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/22.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/22.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/22.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/22.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/22.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/22.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "9H") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/23.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/23.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/23.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/23.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/23.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/23.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "10H") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/24.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/24.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/24.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/24.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/24.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/24.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "JH") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/25.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/25.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/25.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/25.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/25.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/25.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "QH") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/26.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/26.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/26.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/26.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/26.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/26.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "KH") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/27.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/27.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/27.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/27.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/27.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/27.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
-
     // DIAMONDS //
-    else if (cardPic == "AD") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/28.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/28.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/28.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/28.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/28.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+    if (cardPic == "AD") {
+        return "<img src=\"images/Blackjack game/28.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "2D") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/29.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/29.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/29.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/29.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/29.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/29.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "3D") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/30.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/30.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/30.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/30.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/30.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/30.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "4D") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/31.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/31.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/31.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/31.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/31.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/31.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "5D") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/32.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/32.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/32.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/32.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/32.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/32.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "6D") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/33.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/33.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/33.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/33.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/33.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/33.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "7D") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/34.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/34.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/34.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/34.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/34.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/34.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "8D") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/35.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/35.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/35.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/35.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/35.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/35.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "9D") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/36.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/36.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/36.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/36.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/36.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/36.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "10D") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/37.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/37.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/37.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/37.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/37.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/37.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "JD") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/38.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/38.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/38.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/38.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/38.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/38.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "QD") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/39.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/39.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/39.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/39.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/39.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/39.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "KD") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/40.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/40.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/40.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/40.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/40.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/40.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
-
     // SPADES //
-    else if (cardPic == "AS") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/41.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/41.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/41.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/41.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/41.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+    if (cardPic == "AS") {
+        return "<img src=\"images/Blackjack game/41.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "2S") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/42.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/42.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/42.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/42.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/42.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/42.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "3S") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/43.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/43.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/43.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/43.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/43.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/43.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "4S") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/44.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/44.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/44.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/44.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/45.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/44.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "5S") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/45.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/45.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/45.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/45.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/45.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/45.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "6S") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/46.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/46.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/46.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/46.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/46.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/46.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "7S") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/47.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/47.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/47.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/47.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/47.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/47.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "8S") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/48.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/48.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/48.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/48.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/48.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/48.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "9S") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/49.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/49.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/49.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/49.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/49.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/49.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "10S") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/50.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/50.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/50.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/50.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/50.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/50.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "JS") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/51.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/51.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/51.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/51.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/51.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/51.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "QS") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/52.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/52.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/52.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/52.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/52.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/52.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
     else if (cardPic == "KS") {
-        if (hitNumber == 1) {
-        pCard1Front.innerHTML = "<img src=\"images/Blackjack game/53.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 2) {
-        pCard2Front.innerHTML = "<img src=\"images/Blackjack game/53.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 3) {
-        pCard3Front.innerHTML = "<img src=\"images/Blackjack game/53.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 4) {
-        pCard4Front.innerHTML = "<img src=\"images/Blackjack game/53.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        } else if (hitNumber == 5) {
-        pCard5Front.innerHTML = "<img src=\"images/Blackjack game/53.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
-        }
+        return "<img src=\"images/Blackjack game/53.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
 }
