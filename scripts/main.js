@@ -89,6 +89,9 @@ function confirmBet() {
         finBet.style.display = "none"
         bank = bank - bet
         balance.innerHTML = "$"+bank+".00"
+        if (bank >= bet) {
+            doubleButton.style.display = "flex"
+        }
         beginDeal()
     }
 }
@@ -523,6 +526,7 @@ function Value(card) {
 function HIT() {
     if (playerValue < 21) {
         drawCard((hitNumber + 10))
+        doubleButton.style.display = "none"
     }
     else {
         console.error("player has busted/reached 21")
@@ -532,6 +536,7 @@ function HIT() {
 function STAY() {
     hitButton.style.display = "none"
     stayButton.style.display = "none"
+    doubleButton.style.display = "none"
     hitNumber = 12;
     console.log("Player is staying on: " + playerValue);
     document.getElementById("dCard2-front").innerHTML = changePicture(dCard2);
@@ -544,6 +549,19 @@ function STAY() {
     setTimeout(testForWin, 1500)
     setTimeout(resetGame, 3000)
 }
+var doubleButton = document.getElementById("double-down")
+function DOUBLE() {
+    hitButton.style.display = "none"
+    stayButton.style.display = "none"
+    doubleButton.style.display = "none"
+    bank -= bet
+    balance.innerHTML = "$"+bank+".00"
+    bet += bet
+    betDisplay.innerHTML = "$"+bet+".00"
+    HIT()
+    STAY()
+
+}
 
 function dealerHIT() {
     if (dealerValue < 17) {
@@ -551,9 +569,9 @@ function dealerHIT() {
         if ((dealerValue + Value(dCard3)) < 17) {
             setTimeout(drawCardFour, 500)
             if ((dealerValue + Value(dCard3) + Value(dCard4)) < 17) {
-                setTimeout(drawCardFive, 500)
+                setTimeout(drawCardFive, 1000)
                 if ((dealervalue + Value(dCard3) + Value(dCard4) + Value(dCard5)) < 17) {
-                    setTimeout(drawCardSix, 500)
+                    setTimeout(drawCardSix, 1500)
                 }
             }
         }
@@ -563,7 +581,7 @@ function dealerHIT() {
 
 function testForBust(side) {
     if (side == 1) {
-        if (playerValue >= 21) {
+        if (playerValue > 21) {
             console.warn("Player has busted ! "+playerValue)
             STAY()
         }
@@ -592,7 +610,6 @@ function testForBlackjack() {
         hitButton.style.display = "none"
         stayButton.style.display = "none"
         document.getElementById("dealer-value").style.color = "#10bb10"
-        setTimeout(testForWin, 1500)
         setTimeout(resetGame, 3000)
     }
 }
@@ -671,7 +688,9 @@ function resetGame() {
     incBet.style.display = "flex"
     decBet.style.display = "flex"
     finBet.style.display = "flex"
+    doubleButton.style.display = "none"
     betDisplay.innerHTML = "$"+bet+".00"
+    balance.innerHTML = "$"+bank+".00"
     document.getElementById("dealer-value").innerHTML = "00"
     document.getElementById("player-value").innerHTML = "00"
     document.getElementById("player-value").style.color = "#ffffff"
@@ -902,3 +921,6 @@ function changePicture(cardPic) {
         return "<img src=\"images/Blackjack game/53.png\" style=\"width: 100%; height: 100%; border-radius: 10px;\">"
     }
 }
+
+var menu = document.getElementById
+function openMenu() {}

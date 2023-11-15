@@ -223,10 +223,9 @@
     cursor: pointer;
     z-index: 3;
 }
-#hit-button, #stay-button {
+#hit-button, #stay-button, #double-down {
     position: absolute;
     width: 5rem;
-    height: 5rem;
     background-color: rgba(0, 0, 0, 0.322);
     border-radius: 15px;
     font-size: 2rem;
@@ -241,10 +240,19 @@
 #hit-button {
     display: none;
     left: 85%;
+    height: 5rem;
+}
+#double-down {
+    height: 2rem;
+    left: 85%;
+    font-size: 1rem;
+    bottom: 14%;
+    display: none;
 }
 #stay-button {
     display: none;
     right: 85%;
+    height: 5rem;
 }
 
 
