@@ -98,24 +98,43 @@ function randomCard(deck) {
     return deck[randomIndex];
 }
 
-// var dCard1 = document.getElementById("dCard1")
-// var dCard2 = document.getElementById("dCard2")
-// var dCard3 = document.getElementById("dCard3")
-// var dCard4 = document.getElementById("dCard4")
-// var dCard5 = document.getElementById("dCard5")
-// var dCard6 = document.getElementById("dCard6")
-// var dCard7 = document.getElementById("dCard7")
-// var dCard8 = document.getElementById("dCard8")
-// var dCard9 = document.getElementById("dCard9")
-// var pCard1 = document.getElementById("pCard1")
-// var pCard2 = document.getElementById("pCard2")
-// var pCard3 = document.getElementById("pCard3")
-// var pCard4 = document.getElementById("pCard4")
-// var pCard5 = document.getElementById("pCard5")
-// var pCard6 = document.getElementById("pCard6")
-// var pCard7 = document.getElementById("pCard7")
-// var pCard8 = document.getElementById("pCard8")
-// var pCard9 = document.getElementById("pCard9")
+var dCard1Style = document.getElementById("dCard1")
+var dCard2Style = document.getElementById("dCard2")
+var dCard3Style = document.getElementById("dCard3")
+var dCard4Style = document.getElementById("dCard4")
+var dCard5Style = document.getElementById("dCard5")
+var dCard6Style = document.getElementById("dCard6")
+var dCard7Style = document.getElementById("dCard7")
+var dCard8Style = document.getElementById("dCard8")
+var dCard9Style = document.getElementById("dCard9")
+var pCard1Style = document.getElementById("pCard1")
+var pCard2Style = document.getElementById("pCard2")
+var pCard3Style = document.getElementById("pCard3")
+var pCard4Style = document.getElementById("pCard4")
+var pCard5Style = document.getElementById("pCard5")
+var pCard6Style = document.getElementById("pCard6")
+var pCard7Style = document.getElementById("pCard7")
+var pCard8Style = document.getElementById("pCard8")
+var pCard9Style = document.getElementById("pCard9")
+
+var dCard1 = 0
+var dCard2 = 0
+var dCard3 = 0
+var dCard4 = 0
+var dCard5 = 0
+var dCard6 = 0
+var dCard7 = 0
+var dCard8 = 0
+var dCard9 = 0
+var pCard1 = 0
+var pCard2 = 0
+var pCard3 = 0
+var pCard4 = 0
+var pCard5 = 0
+var pCard6 = 0
+var pCard7 = 0
+var pCard8 = 0
+var pCard9 = 0
 
 var cardFace = document.getElementById("card")
 
@@ -132,7 +151,7 @@ function addCardToDealerHand(newCard) {
 }
 function drawCard(dealingCard) {
     if (dealingCard == 1) {
-        dCard1.style.display = "block"
+        dCard1Style.style.display = "block"
         dCard1 = randomCard(deck)
         addCardToDealerHand(dCard1)
         console.log("dCard1 = "+dCard1)
@@ -143,7 +162,7 @@ function drawCard(dealingCard) {
         hitNumber = 11
     }
     else if (dealingCard == 2) {
-        dCard2.style.display = "block"
+        dCard2Style.style.display = "block"
         dCard2 = randomCard(deck)
         addCardToDealerHand(dCard2)
         console.log("dCard2 = "+dCard2)
@@ -153,7 +172,7 @@ function drawCard(dealingCard) {
         hitNumber = 12
     }
     else if (dealingCard == 3) {
-        dCard3.style.display = "block"
+        dCard3Style.style.display = "block"
         dCard3 = randomCard(deck)
         addCardToDealerHand(dCard3)
         console.log("dCard3 = "+dCard3)
@@ -163,7 +182,7 @@ function drawCard(dealingCard) {
         hitNumber = 13
     }
     else if (dealingCard == 4) {
-        dCard4.style.display = "block"
+        dCard4Style.style.display = "block"
         dCard4 = randomCard(deck)
         addCardToDealerHand(dCard4)
         console.log("dCard4 = "+dCard4)
@@ -173,7 +192,7 @@ function drawCard(dealingCard) {
         hitNumber = 14
     }
     else if (dealingCard == 5) {
-        dCard5.style.display = "block"
+        dCard5Style.style.display = "block"
         dCard5 = randomCard(deck)
         addCardToDealerHand(dCard5)
         console.log("dCard5 = "+dCard5)
@@ -219,7 +238,7 @@ function drawCard(dealingCard) {
         hitNumber = 19
     }
     else if (dealingCard == 10) {
-        pCard1.style.display = "block"
+        pCard1Style.style.display = "block"
         pCard1 = randomCard(deck)
         addCardToPlayerHand(pCard1)
         console.log("pCard1 = "+pCard1)
@@ -229,7 +248,7 @@ function drawCard(dealingCard) {
         changePicture(pCard1)
     }
     else if (dealingCard == 11) {
-        pCard2.style.display = "block"
+        pCard2Style.style.display = "block"
         pCard2 = randomCard(deck)
         addCardToPlayerHand(pCard2)
         console.log("pCard2 = "+pCard2)
@@ -239,7 +258,7 @@ function drawCard(dealingCard) {
         changePicture(pCard2)
     }
     else if (dealingCard == 12) {
-        pCard3.style.display = "block"
+        pCard3Style.style.display = "block"
         pCard3 = randomCard(deck)
         addCardToPlayerHand(pCard3)
         console.log("pCard3 = "+pCard3)
@@ -249,7 +268,7 @@ function drawCard(dealingCard) {
         changePicture(pCard3)
     }
     else if (dealingCard == 13) {
-        pCard4.style.display = "block"
+        pCard4Style.style.display = "block"
         pCard4 = randomCard(deck)
         addCardToPlayerHand(pCard4)
         console.log("pCard4 = "+pCard4)
@@ -259,7 +278,7 @@ function drawCard(dealingCard) {
         changePicture(pCard4)
     }
     else if (dealingCard == 14) {
-        pCard5.style.display = "block"
+        pCard5Style.style.display = "block"
         pCard5 = randomCard(deck)
         addCardToPlayerHand(pCard5)
         console.log("pCard5 = "+pCard5)
@@ -512,24 +531,23 @@ function STAY() {
     console.log("Player is staying on: " + playerValue);
     document.getElementById("dCard2-front").innerHTML = dCard2;
     document.getElementById("dealer-value").innerHTML = dealerValue;
-    for (i=0; i<2; i++) {
-        setTimeout(dealerHIT, 500)
+    for (i=0; i<3; i++) {
+        if (dealerValue < 17) {
+            setTimeout(dealerHIT, 500)
+        }
     }
+    testForWin()
+    setTimeout(resetGame, 3000)
 }
 
 function dealerHIT() {
     if (dealerValue < 17) {
-        if (hitNumber == 12) {
-            drawCardThree();
-            console.log("INSIDE dealerHIT(): dealerValue = " + dealerValue);
-            hitNumber = 13;
-        } else if (hitNumber == 13) {
-            setTimeout(drawCardFour, 500);
-            console.log("INSIDE dealerHIT(): dealerValue = " + dealerValue);
-            hitNumber = 14;
-        } else if (hitNumber == 14) {
-            setTimeout(drawCardFive, 1000);
-            console.log("INSIDE dealerHIT(): dealerValue = " + dealerValue);
+        drawCardThree()
+        if ((dealerValue + Value(dCard3)) < 17) {
+            drawCardFour()
+            if ((dealerValue + Value(dCard3) + Value(dCard4)) < 17) {
+                drawCardFive()
+            }
         }
     }
 }
@@ -545,14 +563,87 @@ function testForBust(side) {
     else if (side == 2) {
         if ((dealerValue >= 17)) {
             console.warn("Dealer is staying / Dealer has busted ! "+dealerValue)
-            testForWin()
         }
         else {
             return true
         }
     }
 }
-function testForWin() {}
+function testForWin() {
+    if (playerValue > 21) {
+        console.warn("Player Bust")
+    }
+    else if ((playerValue > dealerValue) && (playerValue <= 21)) {
+        console.warn("Player Win")
+        bank += (bet*2)
+    }
+    else if (playerValue == dealerValue) {
+        console.warn("Push")
+        bank += bet
+    }
+    else if ((playerValue <= 21) && (dealerValue >= 21)) {
+        console.warn("Dealer Bust")
+        bank += (bet*2)
+    }
+    else if ((playerValue <= dealerValue) && (dealerValue <= 21)) {
+        console.warn("Dealer Win")
+    }
+    else {
+        console.error("testForWin Error")
+    }
+    balance.innerHTML = "$"+bank+".00"
+}
+function resetGame() {
+    dCard1Style.style.display = "none"
+    dCard2Style.style.display = "none"
+    dCard3Style.style.display = "none"
+    dCard4Style.style.display = "none"
+    dCard5Style.style.display = "none"
+    dCard6Style.style.display = "none"
+    dCard7Style.style.display = "none"
+    dCard8Style.style.display = "none"
+    dCard9Style.style.display = "none"
+    pCard1Style.style.display = "none"
+    pCard2Style.style.display = "none"
+    pCard3Style.style.display = "none"
+    pCard4Style.style.display = "none"
+    pCard5Style.style.display = "none"
+    pCard6Style.style.display = "none"
+    pCard7Style.style.display = "none"
+    pCard8Style.style.display = "none"
+    pCard9Style.style.display = "none"
+    bet = 0
+    hitNumber = 0
+    dCard1 = 0
+    dCard2 = 0
+    dCard3 = 0
+    dCard4 = 0
+    dCard5 = 0
+    dCard6 = 0
+    dCard7 = 0
+    dCard8 = 0
+    dCard9 = 0
+    pCard1 = 0
+    pCard2 = 0
+    pCard3 = 0
+    pCard4 = 0
+    pCard5 = 0
+    pCard6 = 0
+    pCard7 = 0
+    pCard8 = 0
+    pCard9 = 0
+    dealerValue = 0
+    playerValue = 0
+    playerHand = []
+    dealerHand = []
+    incBet.style.display = "flex"
+    decBet.style.display = "flex"
+    finBet.style.display = "flex"
+    betDisplay.innerHTML = "$"+bet+".00"
+    document.getElementById("dealer-value").innerHTML = "00"
+    document.getElementById("player-value").innerHTML = "00"
+    console.warn("Game Reset")
+}
 
 function calculatePlayerValue(hand) {
   let total = 0
