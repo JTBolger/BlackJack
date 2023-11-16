@@ -12,8 +12,24 @@
             <div id="title">Blackjack</div>
             <div id="table-rim"></div>
             <div id="table">
-                <div id="balance" onclick=""><img src="images/red-chip.png" style="height: 50%; margin-top: 13%; margin-left: 5%;"><div id="money">$--.--</div></div>
-                <div id="start" onclick="startGame()"></div>
+                <div id="balance" onclick="openMenu()">
+                    <img src="images/red-chip.png" id="poker-chip">
+                    <div id="money">$--.--</div>
+                    <div id="stats"onclick="openStats()">STATS
+                        <div id="stats-body">
+                            <div id="hands">Hands : --</div>
+                            <div id="player-wins">Player Wins : --</div>
+                            <div id="dealer-wins">Dealer Wins : --</div>
+                            <div id="player-blackjacks">Player Blackjacks : --</div>
+                            <div id="dealer-blackjacks">Dealer Blackjacks : --</div>
+                            <div id="double-downs-won">Double Downs Won : --</div>
+                            <div>-</div>
+                            <div id="money-won">Amount Earned : $--.--</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="close-menu-button" onclick="closeMenu()">CLOSE</div>
+                <div id="start" onclick="startGame()">START</div>
                 <div id="play-area">
                     <div id="bet-space">
                         <div id="subtract-bet" onclick="subtractBet(10)">-</div>

@@ -35,6 +35,42 @@ function flipCard() {
     card.style.transform = "rotateY(180deg)"
 }
 
+var hands = 0
+var playerWins = 0
+var dealerWins = 0
+var playerBlackjacks = 0
+var dealerBlackjacks = 0
+var DubDwnWon = 0
+var amountWon = 0
+
+function incHands() {
+    hands += 1
+    document.getElementById("hands").innerHTML = "Hands : "+hands
+}
+function incPlayerWins() {
+    playerWins += 1
+    document.getElementById("player-wins").innerHTML = "Player Wins : "+playerWins
+}
+function incDealerWins() {
+    dealerWins += 1
+    document.getElementById("dealer-wins").innerHTML = "Dealer Wins : "+dealerWins
+}
+function incPlayerBlackjacks() {
+    playerBlackjacks += 1
+    document.getElementById("player-blackjacks").innerHTML = "Player Blackjacks : "+playerBlackjacks
+}
+function incDealerBlackjacks() {
+    dealerBlackjacks += 1
+    document.getElementById("dealer-blackjacks").innerHTML = "Dealer Blackjacks : "+dealerBlackjacks
+}
+function incDoubleDownsWon() {
+    DubDwnWon += 1
+    document.getElementById("double-downs-won").innerHTML = "Double Downs Won : "+DubDwnWon
+}
+function incAmountWon(amount) {
+    amountWon += amount
+    document.getElementById("money-won").innerHTML = "Amount Won : $"+amountWon+".00"
+}
 
 const deck = [
     '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', '10C', 'JC', 'QC', 'KC', 'AC',
@@ -120,24 +156,24 @@ var pCard7Style = document.getElementById("pCard7")
 var pCard8Style = document.getElementById("pCard8")
 var pCard9Style = document.getElementById("pCard9")
 
-var dCard1 = 0
-var dCard2 = 0
-var dCard3 = 0
-var dCard4 = 0
-var dCard5 = 0
-var dCard6 = 0
-var dCard7 = 0
-var dCard8 = 0
-var dCard9 = 0
-var pCard1 = 0
-var pCard2 = 0
-var pCard3 = 0
-var pCard4 = 0
-var pCard5 = 0
-var pCard6 = 0
-var pCard7 = 0
-var pCard8 = 0
-var pCard9 = 0
+// var dCard1 = 0
+// var dCard2 = 0
+// var dCard3 = 0
+// var dCard4 = 0
+// var dCard5 = 0
+// var dCard6 = 0
+// var dCard7 = 0
+// var dCard8 = 0
+// var dCard9 = 0
+// var pCard1 = 0
+// var pCard2 = 0
+// var pCard3 = 0
+// var pCard4 = 0
+// var pCard5 = 0
+// var pCard6 = 0
+// var pCard7 = 0
+// var pCard8 = 0
+// var pCard9 = 0
 
 var cardFace = document.getElementById("card")
 
@@ -161,7 +197,6 @@ function drawCard(dealingCard) {
         document.getElementById("dCard1-front").innerHTML = changePicture(dCard1)
         calculateDealerValue(dealerHand)
         document.getElementById("dealer-value").innerHTML = Value(dCard1)
-        changePicture(dCard1)
         hitNumber = 11
     }
     else if (dealingCard == 2) {
@@ -181,7 +216,6 @@ function drawCard(dealingCard) {
         console.log("dCard3 = "+dCard3)
         document.getElementById("dCard3-front").innerHTML = changePicture(dCard3)
         calculateDealerValue(dealerHand)
-        changePicture(dCard3)
         hitNumber = 13
     }
     else if (dealingCard == 4) {
@@ -191,7 +225,6 @@ function drawCard(dealingCard) {
         console.log("dCard4 = "+dCard4)
         document.getElementById("dCard4-front").innerHTML = changePicture(dCard4)
         calculateDealerValue(dealerHand)
-        changePicture(dCard4)
         hitNumber = 14
     }
     else if (dealingCard == 5) {
@@ -201,7 +234,6 @@ function drawCard(dealingCard) {
         console.log("dCard5 = "+dCard5)
         document.getElementById("dCard5-front").innerHTML = changePicture(dCard5)
         calculateDealerValue(dealerHand)
-        changePicture(dCard5)
         hitNumber = 15
     }
     else if (dealingCard == 6) {
@@ -210,7 +242,6 @@ function drawCard(dealingCard) {
         console.log("dCard6 = "+dCard6)
         document.getElementById("dCard6-front").innerHTML = changePicture(dCard6)
         calculateDealerValue(pCard6)
-        changePicture(dCard6)
         hitNumber = 16
     }
     else if (dealingCard == 7) {
@@ -219,7 +250,6 @@ function drawCard(dealingCard) {
         console.log("dCard7 = "+dCard7)
         document.getElementById("dCard7-front").innerHTML = changePicture(dCard7)
         calculateDealerValue(dCard7)
-        changePicture(dCard7)
         hitNumber = 17
     }
     else if (dealingCard == 8) {
@@ -228,7 +258,6 @@ function drawCard(dealingCard) {
         console.log("dCard8 = "+dCard8)
         document.getElementById("dCard8-front").innerHTML = changePicture(dCard8)
         calculateDealerValue(dCard8)
-        changePicture(dCard8)
         hitNumber = 18
     }
     else if (dealingCard == 9) {
@@ -237,7 +266,6 @@ function drawCard(dealingCard) {
         console.log("dCard9 = "+dCard9)
         document.getElementById("dCard9-front").innerHTML = changePicture(dCard9)
         calculateDealerValue(dCard9)
-        changePicture(dCard9)
         hitNumber = 19
     }
     else if (dealingCard == 10) {
@@ -248,7 +276,6 @@ function drawCard(dealingCard) {
         document.getElementById("pCard1-front").innerHTML = changePicture(pCard1)
         calculatePlayerValue(playerHand)
         hitNumber = 1
-        changePicture(pCard1)
     }
     else if (dealingCard == 11) {
         pCard2Style.style.display = "block"
@@ -258,7 +285,6 @@ function drawCard(dealingCard) {
         document.getElementById("pCard2-front").innerHTML = changePicture(pCard2)
         calculatePlayerValue(playerHand)
         hitNumber = 2
-        changePicture(pCard2)
         testForBlackjack()
     }
     else if (dealingCard == 12) {
@@ -269,7 +295,6 @@ function drawCard(dealingCard) {
         document.getElementById("pCard3-front").innerHTML = changePicture(pCard3)
         calculatePlayerValue(playerHand)
         hitNumber = 3
-        changePicture(pCard3)
     }
     else if (dealingCard == 13) {
         pCard4Style.style.display = "block"
@@ -279,7 +304,6 @@ function drawCard(dealingCard) {
         document.getElementById("pCard4-front").innerHTML = changePicture(pCard4)
         calculatePlayerValue(playerHand)
         hitNumber = 4
-        changePicture(pCard4)
     }
     else if (dealingCard == 14) {
         pCard5Style.style.display = "block"
@@ -289,7 +313,6 @@ function drawCard(dealingCard) {
         document.getElementById("pCard5-front").innerHTML = changePicture(pCard5)
         calculatePlayerValue(playerHand)
         hitNumber = 5
-        changePicture(pCard5)
     }
     else if (dealingCard == 15) {
         pCard6.style.display = "block"
@@ -298,7 +321,6 @@ function drawCard(dealingCard) {
         document.getElementById("pCard6-front").innerHTML = changePicture(pCard6)
         calculatePlayerValue(pCard6)
         hitNumber = 6
-        changePicture(pCard6)
     }
     else if (dealingCard == 16) {
         pCard7.style.display = "block"
@@ -307,7 +329,6 @@ function drawCard(dealingCard) {
         document.getElementById("pCard7-front").innerHTML = changePicture(pCard7)
         calculatePlayerValue(pCard7)
         hitNumber = 7
-        changePicture(pCard7)
     }
     else if (dealingCard == 17) {
         pCard8.style.display = "block"
@@ -316,7 +337,6 @@ function drawCard(dealingCard) {
         document.getElementById("pCard8-front").innerHTML = changePicture(pCard8)
         calculatePlayerValue(pCard8)
         hitNumber = 8
-        changePicture(pCard8)
     }
     else if (dealingCard == 18) {
         pCard9.style.display = "block"
@@ -325,7 +345,6 @@ function drawCard(dealingCard) {
         document.getElementById("pCard9-front").innerHTML = changePicture(pCard9)
         calculatePlayerValue(pCard9)
         hitNumber = 9
-        changePicture(pCard9)
     }
 }
 
@@ -347,20 +366,47 @@ function drawCardEleven() {
     drawCard(11)
 }
 function drawCardThree() {
-    drawCard(3)
-    calculateDealerValue()
+    dCard3Style.style.display = "block"
+    dCard3 = randomCard(deck)
+    document.getElementById("dCard3-front").innerHTML = changePicture(dCard3)
+    addCardToDealerHand(dCard3)
+    calculateDealerValue(dealerHand)
+
+    if ((dealerValue) < 17) {
+        setTimeout(drawCardFour, 500)
+        console.log("dCard4 = "+dCard4+"\ndealerValue = "+dealerValue)
+    }
 }
 function drawCardFour() {
-    drawCard(4)
-    calculateDealerValue()
+    dCard4Style.style.display = "block"
+    dCard4 = randomCard(deck)
+    document.getElementById("dCard4-front").innerHTML = changePicture(dCard4)
+    addCardToDealerHand(dCard4)
+    calculateDealerValue(dealerHand)
+
+    if ((dealerValue) < 17) {
+        setTimeout(drawCardFive, 500)
+        console.log("pCard5 = "+dCard5+"\ndealerValue = "+dealerValue)
+    }
 }
 function drawCardFive() {
-    drawCard(5)
-    calculateDealerValue()
+    dCard5Style.style.display = "block"
+    dCard5 = randomCard(deck)
+    document.getElementById("dCard4-front").innerHTML = changePicture(dCard5)
+    addCardToDealerHand(dCard5)
+    calculateDealerValue(dealerHand)
+
+    if ((dealerValue) < 17) {
+        setTimeout(drawCardSix, 500)
+        console.log("pCard6 = "+dCard6+"\ndealerValue = "+dealerValue)
+    }
 }
 function drawCardSix() {
-    drawCard(6)
-    calculateDealerValue()
+    dCard6Style.style.display = "block"
+    dCard6 = randomCard(deck)
+    document.getElementById("dCard4-front").innerHTML = changePicture(dCard6)
+    addCardToDealerHand(dCard6)
+    calculateDealerValue(dealerHand)
 }
 
 
@@ -541,10 +587,9 @@ function STAY() {
     console.log("Player is staying on: " + playerValue);
     document.getElementById("dCard2-front").innerHTML = changePicture(dCard2);
     document.getElementById("dealer-value").innerHTML = dealerValue;
-    for (i=0; i<3; i++) {
-        if (dealerValue < 17) {
-            setTimeout(dealerHIT, 500)
-        }
+    if (dealerValue < 17) {
+        setTimeout(drawCardThree, 500)
+        console.log("dCard3 = "+dCard3+"\ndealerValue = "+dealerValue)
     }
     setTimeout(testForWin, 1500)
     setTimeout(resetGame, 3000)
@@ -560,22 +605,7 @@ function DOUBLE() {
     betDisplay.innerHTML = "$"+bet+".00"
     HIT()
     STAY()
-
-}
-
-function dealerHIT() {
-    if (dealerValue < 17) {
-        drawCardThree()
-        if ((dealerValue + Value(dCard3)) < 17) {
-            setTimeout(drawCardFour, 500)
-            if ((dealerValue + Value(dCard3) + Value(dCard4)) < 17) {
-                setTimeout(drawCardFive, 1000)
-                if ((dealervalue + Value(dCard3) + Value(dCard4) + Value(dCard5)) < 17) {
-                    setTimeout(drawCardSix, 1500)
-                }
-            }
-        }
-    }
+    
 }
 
 
@@ -583,7 +613,7 @@ function testForBust(side) {
     if (side == 1) {
         if (playerValue > 21) {
             console.warn("Player has busted ! "+playerValue)
-            STAY()
+            setTimeout(STAY, 500)
         }
     }
     else if (side == 2) {
@@ -596,46 +626,71 @@ function testForBust(side) {
     }
 }
 function testForBlackjack() {
-    if ((playerValue == 21) && (hitNumber == 2)) {
+    if ((playerValue == 21) && (dealerValue == 21)) {
+        console.warn("Push")
+        doubleButton.style.display = "none"
+        bank += bet
+        resetGame()
+        return "false"
+    }
+    else if ((playerValue == 21) && (hitNumber == 2)) {
         console.warn("Player Blackjack")
         hitButton.style.display = "none"
         stayButton.style.display = "none"
         bank += (bet + (1.5*bet))
         document.getElementById("player-value").style.color = "#10bb10"
+        doubleButton.style.display = "none"
         setTimeout(resetGame, 3000)
+        incAmountWon(bet*2.5)
+        incPlayerBlackjacks()
+        incPlayerWins()
     }
     else if ((dealerValue == 21) && (hitNumber == 2)) {
         console.warn("Dealer Blackjack")
+        doubleButton.style.display = "none"
         document.getElementById("dCard2-front").innerHTML = changePicture(dCard2);
         hitButton.style.display = "none"
         stayButton.style.display = "none"
         document.getElementById("dealer-value").style.color = "#10bb10"
         setTimeout(resetGame, 3000)
+        incDealerBlackjacks()
+        incDealerWins()
     }
 }
 function testForWin() {
     if (playerValue > 21) {
         console.warn("Player Bust")
         document.getElementById("player-value").style.color = "#bb1010"
+        incDealerWins()
+        return "false"
     }
     else if ((playerValue > dealerValue) && (playerValue <= 21)) {
         console.warn("Player Win")
         document.getElementById("player-value").style.color = "#10bb10" // green
         document.getElementById("dealer-value").style.color = "#bb1010" // red
         bank += (bet*2)
+        incAmountWon(bet*2)
+        incPlayerWins()
+        return "true"
     }
     else if (playerValue == dealerValue) {
         console.warn("Push")
         bank += bet
+        return "false"
     }
     else if ((playerValue <= 21) && (dealerValue > 21)) {
         console.warn("Dealer Bust")
         document.getElementById("dealer-value").style.color = "#bb1010"
         bank += (bet*2)
+        incAmountWon(bet*2)
+        incPlayerWins()
+        return "true"
     }
     else if ((playerValue <= dealerValue) && (dealerValue <= 21)) {
         console.warn("Dealer Win")
         document.getElementById("dealer-value").style.color = "#10bb10"
+        incDealerWins()
+        return "false"
     }
     else {
         console.error("testForWin Error")
@@ -695,6 +750,7 @@ function resetGame() {
     document.getElementById("player-value").innerHTML = "00"
     document.getElementById("player-value").style.color = "#ffffff"
     document.getElementById("dealer-value").style.color = "#ffffff"
+    incHands()
     console.warn("Game Reset")
 }
 
@@ -922,5 +978,46 @@ function changePicture(cardPic) {
     }
 }
 
-var menu = document.getElementById
-function openMenu() {}
+var pokerChip = document.getElementById("poker-chip")
+var closeButton = document.getElementById("close-menu-button")
+var statsButton = document.getElementById("stats")
+var statsBody = document.getElementById("stats-body")
+function openMenu() {
+    console.log("Open Menu")
+    coinHolder.style.height = "90%"
+    pokerChip.style.height = "10%"
+    balance.style.marginTop = "65px"
+    balance.style.alignItems = "flex-start"
+    closeButton.style.marginBottom = "1rem"
+    closeButton.style.height = "5rem"
+    statsButton.style.display = "block"
+}
+function closeMenu() {
+    console.log("Close Menu")
+    coinHolder.style.height = "150px"
+    closeButton.style.width = "450px"
+    coinHolder.style.width = "450px"
+    pokerChip.style.height = "50%"
+    balance.style.marginTop = "65px"
+    balance.style.alignItems = "flex-start"
+    closeButton.style.marginBottom = "-10rem"
+    statsButton.style.display = "none"
+    statsButton.style.marginRight = "25%"
+    pokerChip.style.marginLeft = "-30%"
+    pokerChip.style.marginTop = "13%"
+    statsButton.style.top = "0"
+    statsBody.style.opacity = "0"
+    statsBody.style.height = "0rem"
+}
+function openStats() {
+    console.log("Open Stats")
+    coinHolder.style.width = "100%"
+    closeButton.style.width = "100%"
+    pokerChip.style.marginTop = "3%"
+    pokerChip.style.marginLeft = "-65%"
+    statsButton.style.marginRight = "0"
+    statsButton.style.top = "-75%"
+    statsBody.style.opacity = "1"
+    statsBody.style.cursor = "auto"
+    statsBody.style.height = "33rem"
+}
