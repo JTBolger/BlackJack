@@ -591,7 +591,7 @@ function STAY() {
         setTimeout(drawCardThree, 500)
         console.log("dCard3 = "+dCard3+"\ndealerValue = "+dealerValue)
     }
-    setTimeout(testForWin, 1500)
+    setTimeout(testForWin, 2000)
     setTimeout(resetGame, 3000)
 }
 var doubleButton = document.getElementById("double-down")
