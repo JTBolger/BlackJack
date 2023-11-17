@@ -81,8 +81,9 @@
 #money{
     display: flex;
     margin: 10px;
-    align-items: flex-end;
-    margin-bottom: 25px;
+    align-items: flex-start;
+    /* margin-bottom: 25px; */
+    margin-top: 65px;
 }
 /* #balance:hover {
     transform: translateY(10px);
@@ -122,6 +123,7 @@
     justify-content: center;
     font-weight: bold;
     user-select: none;
+    transition: 0.25s;
 }
 #dealer-value {
     bottom: 50%;
@@ -266,8 +268,8 @@
 
 
 #poker-chip {
-    height: 50%;
-    margin-top: 13%;
+    height: 5rem;
+    margin-top: 3rem;
     margin-left: -30%;
     user-select: none;
 }
@@ -277,7 +279,8 @@
     height: 0rem;
     display: flex;
     bottom: 0;
-    color: #232323;
+    color: white;
+    text-shadow: 2px 2px #232323;
     bottom: -2rem;
     position: absolute;
     margin-bottom: -10rem;
@@ -293,8 +296,9 @@
     display: flex;
     justify-content: center;
     border-top-left-radius: 50px;
+    margin-right: 3rem;
 }
-#stats {
+#stats, #about-the-project {
     color: white;
     position: absolute;
     margin-top: 35%;
@@ -306,10 +310,13 @@
     display: none;
     transition: 0.5s;
 }
-#stats-body {
+#about-the-project {
+    margin-top: 50%;
+}
+#stats-body, #project-body {
     width: 80rem;
     height: 0rem;
-    background-color: #2323234b;
+    background-color: #23232391;
     position: absolute;
     margin-top: -2rem;
     margin-left: -36rem;
@@ -321,4 +328,16 @@
     justify-content: center;
     flex-wrap: nowrap;
     flex-direction: column;
+}
+.project-body2 {
+    width: 75%;
+    height: 90%;
+    overflow: scroll;
+    padding: 0.5rem;
+    font: menu;
+    font-size: 1.25rem;
+    color: white;
+}
+.project-body2 p{
+    margin-top: 2rem;
 }
