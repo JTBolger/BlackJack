@@ -8,6 +8,7 @@ var betDisplay = document.getElementById("bet")
 var incBet = document.getElementById("add-bet")
 var decBet = document.getElementById("subtract-bet")
 var finBet = document.getElementById("confirm-bet")
+var allInBet = document.getElementById("all-in-bet")
 var hitButton = document.getElementById("hit-button")
 var stayButton = document.getElementById("stay-button")
 
@@ -117,6 +118,11 @@ function addBet(amount) {
         console.log("amount after change = "+bet)
     }
 }
+function allIn() {
+    bet = bank
+    betDisplay.innerHTML = "$"+bet+".00"
+    console.log("amount after change = "+bet)
+}
 function subtractBet(amount) {
     if ((bet - amount) <= 0) {
         console.error("bet amount cannot be less than or equal to zero")
@@ -132,6 +138,7 @@ function confirmBet() {
         incBet.style.display = "none"
         decBet.style.display = "none"
         finBet.style.display = "none"
+        allInBet.style.display = "none"
         bank = bank - bet
         balance.innerHTML = "$"+bank+".00"
         if (bank >= bet) {
@@ -649,6 +656,7 @@ function testForBlackjack() {
         stayButton.style.display = "none"
         bank += (bet + (1.5*bet))
         document.getElementById("player-value").style.color = "#10bb10"
+        document.getElementById("player-value").style.height = "2.5rem"
         doubleButton.style.display = "none"
         setTimeout(resetGame, 3000)
         incAmountWon(bet*2.5)
@@ -662,6 +670,7 @@ function testForBlackjack() {
         hitButton.style.display = "none"
         stayButton.style.display = "none"
         document.getElementById("dealer-value").style.color = "#10bb10"
+        document.getElementById("dealer-value").style.height = "2.5rem"
         setTimeout(resetGame, 3000)
         incDealerBlackjacks()
         incDealerWins()
@@ -671,6 +680,7 @@ function testForWin() {
     if (playerValue > 21) {
         console.warn("Player Bust")
         document.getElementById("player-value").style.color = "#bb1010"
+        document.getElementById("dealer-value").style.height = "2.5rem"
         incDealerWins()
         resetStreak()
         return "false"
@@ -679,6 +689,7 @@ function testForWin() {
         console.warn("Player Win")
         document.getElementById("player-value").style.color = "#10bb10" // green
         document.getElementById("dealer-value").style.color = "#bb1010" // red
+        document.getElementById("player-value").style.height = "2.5rem"
         bank += (bet*2)
         incAmountWon(bet*2)
         incPlayerWins()
@@ -696,6 +707,7 @@ function testForWin() {
     else if ((playerValue <= 21) && (dealerValue > 21)) {
         console.warn("Dealer Bust")
         document.getElementById("dealer-value").style.color = "#bb1010"
+        document.getElementById("player-value").style.height = "2.5rem"
         bank += (bet*2)
         incAmountWon(bet*2)
         incPlayerWins()
@@ -708,6 +720,7 @@ function testForWin() {
     else if ((playerValue <= dealerValue) && (dealerValue <= 21)) {
         console.warn("Dealer Win")
         document.getElementById("dealer-value").style.color = "#10bb10"
+        document.getElementById("dealer-value").style.height = "2.5rem"
         incDealerWins()
         resetStreak()
         return "false"
@@ -737,6 +750,8 @@ function resetGame() {
     pCard7Style.style.display = "none"
     pCard8Style.style.display = "none"
     pCard9Style.style.display = "none"
+    document.getElementById("player-value").style.height = "2rem"
+    document.getElementById("dealer-value").style.height = "2rem"
     doubled = 0
     bet = 0
     hitNumber = 0
@@ -765,6 +780,7 @@ function resetGame() {
     incBet.style.display = "flex"
     decBet.style.display = "flex"
     finBet.style.display = "flex"
+    allInBet.style.display = "flex"
     doubleButton.style.display = "none"
     betDisplay.innerHTML = "$"+bet+".00"
     balance.innerHTML = "$"+bank+".00"
@@ -989,6 +1005,29 @@ function changePicture(cardPic) {
     }
 }
 
+function addFund() {
+    var fundToAdd = document.getElementById("add-funds-box")
+
+    var fundToAddNum = fundToAdd.value;
+
+    fundToAddNum = parseFloat(fundToAddNum);
+
+    if (fundToAddNum % 1 == 0) {
+        console.log("Fund to add : "+fundToAddNum)
+
+        bank += fundToAddNum
+
+        console.log("New Value : "+bank)
+        balance.innerHTML = "$"+bank+".00"
+        document.getElementById("add-fund-debug").innerHTML = "Funds Added"
+        document.getElementById("add-fund-debug").style.color = "white"
+    }
+    else {
+        console.error("Value must be a whole number")
+        document.getElementById("add-fund-debug").innerHTML = "Value must be a whole number."
+        document.getElementById("add-fund-debug").style.color = "red"
+    }
+}
 
 // MENU //
 
@@ -998,71 +1037,111 @@ var statsButton = document.getElementById("stats")
 var statsBody = document.getElementById("stats-body")
 var aboutButton = document.getElementById("about-the-project")
 var aboutBody = document.getElementById("project-body")
+var addFundButton = document.getElementById("add-funds")
+var addFundBody = document.getElementById("add-funds-body")
+var totalMoney = document.getElementById("total-money")
+
+let menuOpen = 0
+
 function openMenu() {
-    console.log("Open Menu")
-    coinHolder.style.height = "90%"
-    // pokerChip.style.height = "10%"
-    // balance.style.marginTop = "65px"
-    // balance.style.alignItems = "flex-start"
-    closeButton.style.marginBottom = "1rem"
-    closeButton.style.height = "5rem"
-    statsButton.style.display = "block"
-    aboutButton.style.display = "block"
+    if (menuOpen == 0) {
+        console.log("Open Menu")
+        coinHolder.style.height = "75%"
+        balance.style.cursor = "auto"
+        closeButton.style.marginBottom = "1rem"
+        closeButton.style.height = "5rem"
+        statsButton.style.display = "block"
+        aboutButton.style.display = "block"
+        addFundButton.style.display = "block"
+        menuOpen = 1
+    }
 }
 function closeMenu() {
     console.log("Close Menu")
-    coinHolder.style.height = "150px"
-    closeButton.style.width = "450px"
-    coinHolder.style.width = "450px"
-    // pokerChip.style.height = "50%"
-    balance.style.marginTop = "65px"
+    coinHolder.style.height = "60px"
+    closeButton.style.width = "325px"
+    coinHolder.style.width = "325px"
+    balance.style.cursor = "pointer"
     balance.style.alignItems = "flex-start"
     closeButton.style.marginBottom = "-10rem"
     statsButton.style.display = "none"
-    statsButton.style.marginRight = "25%"
+    addFundButton.style.display = "none"
     aboutButton.style.display = "none"
-    aboutButton.style.marginRight = "25%"
-    pokerChip.style.marginLeft = "-30%"
-    // pokerChip.style.marginTop = "13%"
     statsButton.style.top = "0"
     statsBody.style.opacity = "0"
-    statsBody.style.height = "0rem"
+    statsBody.style.height = "0%"
     aboutButton.style.top = "0"
     aboutBody.style.opacity = "0"
     aboutBody.style.height = "0rem"
-    closeButton.style.marginRight = "3rem"
+    addFundButton.style.top = "0"
+    addFundBody.style.opacity = "0"
+    addFundBody.style.height = "0rem"
     coinHolder.style.backgroundColor = "rgba(0, 0, 0, 0.322)"
     closeButton.style.backgroundColor = "rgba(0, 0, 0, 0.322)"
+    statsButton.style.marginBottom = "0%"
+    aboutButton.style.marginBottom = "0%"
+    addFundButton.style.marginBottom = "0%"
+    statsBody.style.display = "none"
+    aboutBody.style.display = "none"
+    addFundBody.style.display = "none"
+    menuOpen = 0
 }
 function openStats() {
     console.log("Open Stats")
-    coinHolder.style.width = "100%"
+    coinHolder.style.width = "85%"
     closeButton.style.width = "100%"
     closeButton.style.marginRight = "0"
-    // pokerChip.style.marginTop = "3%"
     pokerChip.style.marginLeft = "-65%"
-    statsButton.style.marginRight = "0"
-    statsButton.style.top = "-75%"
     statsBody.style.opacity = "1"
+    statsBody.style.display = "flex"
     statsBody.style.cursor = "auto"
-    statsBody.style.height = "33rem"
+    statsBody.style.height = "75%"
+    // statsButton.style.marginTop = "-28rem"
+    aboutButton.style.display = "none"
+    addFundButton.style.display = "none"
     coinHolder.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
     closeButton.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
+    coinHolder.style.justifyContent = "space-between"
+    statsButton.style.marginBottom = "100%"
 }
 function openAbout() {
     console.log("Open About")
-    coinHolder.style.width = "100%"
+    coinHolder.style.width = "85%"
     closeButton.style.width = "100%"
-    // pokerChip.style.marginTop = "3%"
     pokerChip.style.marginLeft = "-65%"
     aboutButton.style.marginRight = "0"
     aboutButton.style.top = "-115%"
     aboutBody.style.opacity = "1"
+    aboutBody.style.display = "flex"
     aboutBody.style.cursor = "auto"
-    aboutBody.style.height = "33rem"
+    aboutBody.style.height = "75%"
     statsButton.style.top = "-175%"
     statsButton.style.display = "none"
+    // aboutBody.style.marginTop = "-28rem"
+    addFundButton.style.display = "none"
     closeButton.style.marginRight = "0"
     coinHolder.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
     closeButton.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
+    aboutButton.style.marginBottom = "100%"
+}
+function openAddFunds() {
+    console.log("Add Funds About")
+    coinHolder.style.width = "85%"
+    closeButton.style.width = "100%"
+    pokerChip.style.marginLeft = "-65%"
+    addFundButton.style.marginRight = "0"
+    addFundButton.style.top = "-115%"
+    addFundBody.style.opacity = "1"
+    addFundBody.style.display = "flex"
+    addFundBody.style.cursor = "auto"
+    addFundBody.style.height = "75%"
+    addFundBody.style.marginLeft = "-33.5rem"
+    statsButton.style.top = "-175%"
+    statsButton.style.display = "none"
+    aboutButton.style.top = "-175%"
+    aboutButton.style.display = "none"
+    closeButton.style.marginRight = "0"
+    coinHolder.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
+    closeButton.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
+    addFundButton.style.marginBottom = "100%"
 }

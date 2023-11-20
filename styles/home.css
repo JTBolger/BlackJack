@@ -2,6 +2,9 @@
     margin: 0px;
     padding: 0px;
 }
+img {
+    user-select: none;
+}
 .main {
     width: 100%;
     height: 100%;
@@ -62,28 +65,59 @@
     font-size: 2.5rem;
 }
 #balance {
-    width: 450px;
-    height: 150px;
+    width: 325px;
+    height: 60px;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.322);
     border-bottom-left-radius: 50px;
     color: white;
-    top: 0;
-    right: 0;
+    top: 5%;
+    right: 8%;
     font-size: 3rem;
     font-weight: bold;
     display: flex;
     transition: 0.5s;
     opacity: 0;
     z-index: 100;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+    padding-top: 1rem;
+}
+#close-menu-button {
+    z-index: 5;
+    width: 325px;
+    height: 0rem;
+    display: flex;
+    color: white;
+    text-shadow: 2px 2px #232323;
+    bottom: -2rem;
+    position: absolute;
+    margin-bottom: -10rem;
+    font: menu;
+    font-size: 2rem;
+    transition: 0.5s;
+    cursor: pointer;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.322);
+    right: 0;
+    position: fixed;
+    display: flex;
     justify-content: center;
+    border-top-left-radius: 50px;
 }
 #money{
     display: flex;
     margin: 10px;
     align-items: flex-start;
-    /* margin-bottom: 25px; */
-    margin-top: 65px;
+    user-select: none;
+    cursor: pointer;
+}
+#total-money {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
 }
 /* #balance:hover {
     transform: translateY(10px);
@@ -145,7 +179,7 @@
     border-top-style: solid;
 }
 #pCard1, #pCard2, #pCard3, #pCard4, #pCard5, #pCard6, #pCard7, #pCard8, #pCard9, #dCard1, #dCard2, #dCard3, #dCard4, #dCard5, #dCard6, #dCard7, #dCard8, #dCard9 {
-    width: 30%;
+    width: 25%;
     /* height: 80%; */
     background-color: transparent;
     margin: 10px;
@@ -191,13 +225,11 @@
     width: 75%;
     height: 20%;
 }
-#subtract-bet, #add-bet {
+#subtract-bet, #add-bet, #all-in-bet {
     position: absolute;
     width: 5rem;
-    height: 5rem;
     background-color: rgba(0, 0, 0, 0.322);
     border-radius: 15px;
-    font-size: 5rem;
     display: flex;
     color: white;
     align-items: flex-end;
@@ -205,6 +237,17 @@
     z-index: 3;
     cursor: pointer;
     user-select: none;
+}
+#subtract-bet, #add-bet {
+    height: 5rem;
+    font-size: 5rem;
+}
+#all-in-bet {
+    margin-top: 2rem;
+    font-size: 1rem;
+    right: 42%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 #subtract-bet {
     left: 0;
@@ -269,65 +312,37 @@
 
 #poker-chip {
     height: 5rem;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
     margin-left: -30%;
     user-select: none;
-}
-#close-menu-button {
-    z-index: 5;
-    width: 450px;
-    height: 0rem;
-    display: flex;
-    bottom: 0;
-    color: white;
-    text-shadow: 2px 2px #232323;
-    bottom: -2rem;
-    position: absolute;
-    margin-bottom: -10rem;
-    font: menu;
-    font-size: 2rem;
-    transition: 0.5s;
     cursor: pointer;
-    user-select: none;
-    margin-left: 73%;
-    background-color: rgba(0, 0, 0, 0.322);
-    right: 0;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    border-top-left-radius: 50px;
-    margin-right: 3rem;
 }
-#stats, #about-the-project {
+#stats, #about-the-project, #add-funds {
     color: white;
-    position: absolute;
-    margin-top: 35%;
-    margin-right: 25%;
+    /* margin-right: 25%; */
     font: menu;
     font-size: 2rem;
     user-select: none;
     cursor: pointer;
     display: none;
     transition: 0.5s;
+    /* margin-bottom: 100%; */
 }
-#about-the-project {
-    margin-top: 50%;
-}
-#stats-body, #project-body {
+#stats-body, #project-body, #add-funds-body {
     width: 80rem;
     height: 0rem;
     background-color: #23232391;
     position: absolute;
-    margin-top: -2rem;
     margin-left: -36rem;
     opacity: 0;
     transition: 0.5s;
     color: white;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-wrap: nowrap;
     flex-direction: column;
+    /* margin-left: 7%; */
 }
 .project-body2 {
     width: 75%;
@@ -340,4 +355,50 @@
 }
 .project-body2 p{
     margin-top: 2rem;
+}
+#stats {
+    padding-top: -1rem;
+}
+#add-funds-body {
+    gap: 2rem;
+}
+#add-funds-body input[type="number"] {
+    width: 8rem;
+    height: 1rem;
+    border: 0.25rem solid #777777;
+    border-radius: 15px;
+    font: menu;
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: black;
+}
+
+#add-funds-body input[type="number"]::placeholder {
+    color: #bfbfbf;
+}
+input[type="number" i] {
+    writing-mode: horizontal-tb !important;
+    padding-block: 1px;
+    padding-inline: 2px;
+}
+#add-funds-button {
+    width: 5rem;
+    height: 2rem;
+    font: menu;
+    font-size: 1.5rem;
+    background-color: rgb(0, 125, 0);
+    text-shadow: 2px 2px 2px black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border-bottom: 5px solid rgb(0 100 0);
+    border-right: 5px solid rgb(0 100 0);
+    border-top: 5px solid rgb(0 150 0);
+    border-left: 5px solid rgb(0 150 0);
+}
+#add-fund-debug {
+    color: white;
+    font-size: 1rem;
 }
