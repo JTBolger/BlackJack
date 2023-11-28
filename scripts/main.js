@@ -1062,6 +1062,8 @@ var aboutBody = document.getElementById("project-body")
 var addFundButton = document.getElementById("add-funds")
 var addFundBody = document.getElementById("add-funds-body")
 var totalMoney = document.getElementById("total-money")
+var howToPlayButton = document.getElementById("how-to-play")
+var howToPlayBody = document.getElementById("how-to-play-body")
 
 let menuOpen = 0
 
@@ -1075,6 +1077,7 @@ function openMenu() {
         statsButton.style.display = "block"
         aboutButton.style.display = "block"
         addFundButton.style.display = "block"
+        howToPlayButton.style.display = "block"
         menuOpen = 1
     }
 }
@@ -1106,6 +1109,9 @@ function closeMenu() {
     statsBody.style.display = "none"
     aboutBody.style.display = "none"
     addFundBody.style.display = "none"
+    howToPlayButton.style.display = "none"
+    howToPlayBody.style.display = "none"
+    howToPlayButton.style.marginBottom = "0"
     menuOpen = 0
 }
 function openStats() {
@@ -1118,7 +1124,6 @@ function openStats() {
     statsBody.style.display = "flex"
     statsBody.style.cursor = "auto"
     statsBody.style.height = "75%"
-    // statsButton.style.marginTop = "-28rem"
     aboutButton.style.display = "none"
     addFundButton.style.display = "none"
     coinHolder.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
@@ -1139,7 +1144,6 @@ function openAbout() {
     aboutBody.style.height = "75%"
     statsButton.style.top = "-175%"
     statsButton.style.display = "none"
-    // aboutBody.style.marginTop = "-28rem"
     addFundButton.style.display = "none"
     closeButton.style.marginRight = "0"
     coinHolder.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
@@ -1147,7 +1151,7 @@ function openAbout() {
     aboutButton.style.marginBottom = "100%"
 }
 function openAddFunds() {
-    console.log("Add Funds About")
+    console.log("Open Add Funds")
     coinHolder.style.width = "85%"
     closeButton.style.width = "100%"
     pokerChip.style.marginLeft = "-65%"
@@ -1160,6 +1164,28 @@ function openAddFunds() {
     addFundBody.style.marginLeft = "-33.5rem"
     statsButton.style.top = "-175%"
     statsButton.style.display = "none"
+    aboutButton.style.top = "-175%"
+    aboutButton.style.display = "none"
+    closeButton.style.marginRight = "0"
+    coinHolder.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
+    closeButton.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
+    addFundButton.style.marginBottom = "100%"
+}
+function openHowToPlay() {
+    console.log("Add Funds About")
+    coinHolder.style.width = "85%"
+    closeButton.style.width = "100%"
+    pokerChip.style.marginLeft = "-65%"
+    howToPlayButton.style.marginRight = "0"
+    howToPlayButton.style.marginBottom = "30rem"
+    howToPlayBody.style.opacity = "1"
+    howToPlayBody.style.display = "flex"
+    howToPlayBody.style.cursor = "auto"
+    howToPlayBody.style.height = "75%"
+    howToPlayBody.style.marginLeft = "-32.5rem"
+    statsButton.style.top = "-175%"
+    statsButton.style.display = "none"
+    addFundButton.style.display = "none"
     aboutButton.style.top = "-175%"
     aboutButton.style.display = "none"
     closeButton.style.marginRight = "0"

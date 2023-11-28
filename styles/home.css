@@ -323,7 +323,7 @@ img {
     user-select: none;
     cursor: pointer;
 }
-#stats, #about-the-project, #add-funds {
+#stats, #about-the-project, #add-funds, #how-to-play {
     color: white;
     /* margin-right: 25%; */
     font: menu;
@@ -334,7 +334,7 @@ img {
     transition: 0.5s;
     /* margin-bottom: 100%; */
 }
-#stats-body, #project-body, #add-funds-body {
+#stats-body, #project-body, #add-funds-body, #how-to-play-body {
     width: 80rem;
     height: 0rem;
     background-color: #23232391;
@@ -350,7 +350,7 @@ img {
     flex-direction: column;
     /* margin-left: 7%; */
 }
-.project-body2 {
+.project-body2, #how-to-play-body2 {
     width: 75%;
     height: 90%;
     overflow: scroll;
@@ -359,7 +359,7 @@ img {
     font-size: 1.25rem;
     color: white;
 }
-.project-body2 p{
+.project-body2 p, #how-to-play-body2 p{
     margin-top: 2rem;
 }
 #stats {
@@ -382,11 +382,11 @@ img {
 #add-funds-body input[type="number"]::placeholder {
     color: #bfbfbf;
 }
-input[type="number" i] {
+/* input[type="number" i] {
     writing-mode: horizontal-tb !important;
     padding-block: 1px;
     padding-inline: 2px;
-}
+} */
 #add-funds-button, #copy-stats {
     width: 5rem;
     height: 2rem;
@@ -410,4 +410,19 @@ input[type="number" i] {
 }
 #copy-stats {
     margin-top: 1rem;
+}
+
+.HTP-example {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    background-color: #00000045;
+    justify-content: center;
+    padding: 1.5rem;
+    gap: 3rem;
+}
+
+.HTP-example img {
+    height: 15rem;
+    border-radius: 10px;
 }
