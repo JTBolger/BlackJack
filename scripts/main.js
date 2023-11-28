@@ -43,6 +43,7 @@ var playerBlackjacks = 0
 var dealerBlackjacks = 0
 var DubDwnWon = 0
 var amountWon = 0
+var fundAddTot = 0
 var streak = 0
 
 function incHands() {
@@ -72,6 +73,10 @@ function incDoubleDownsWon() {
 function incAmountWon(amount) {
     amountWon += amount
     document.getElementById("money-won").innerHTML = "Amount Won : $"+amountWon+".00"
+}
+function incFundAdded(amount) {
+    fundAddTot += amount
+    document.getElementById("funds-added").innerHTML = "Funds Added : $"+fundAddTot+".00"
 }
 function incStreak() {
     streak += 1
@@ -119,7 +124,8 @@ function addBet(amount) {
     }
 }
 function allIn() {
-    bet = bank
+    var betTempR = bank % 10
+    bet = bank - betTempR
     betDisplay.innerHTML = "$"+bet+".00"
     console.log("amount after change = "+bet)
 }
@@ -647,6 +653,8 @@ function testForBlackjack() {
         console.warn("Push")
         doubleButton.style.display = "none"
         bank += bet
+        document.getElementById("dealer-value").innerHTML = "21";
+        document.getElementById("player-value").innerHTML = "21";
         resetGame()
         return "false"
     }
@@ -658,6 +666,7 @@ function testForBlackjack() {
         document.getElementById("player-value").style.color = "#10bb10"
         document.getElementById("player-value").style.height = "2.5rem"
         doubleButton.style.display = "none"
+        document.getElementById("player-value").innerHTML = "21";
         setTimeout(resetGame, 3000)
         incAmountWon(bet*2.5)
         incPlayerBlackjacks()
@@ -671,21 +680,23 @@ function testForBlackjack() {
         stayButton.style.display = "none"
         document.getElementById("dealer-value").style.color = "#10bb10"
         document.getElementById("dealer-value").style.height = "2.5rem"
+        document.getElementById("dealer-value").innerHTML = "21";
         setTimeout(resetGame, 3000)
         incDealerBlackjacks()
         incDealerWins()
     }
 }
 function testForWin() {
-    if (playerValue > 21) {
+    if (playerValue > 21) { // Dealer Win
         console.warn("Player Bust")
         document.getElementById("player-value").style.color = "#bb1010"
+        document.getElementById("dealer-value").style.color = "#10bb10"
         document.getElementById("dealer-value").style.height = "2.5rem"
         incDealerWins()
         resetStreak()
         return "false"
     }
-    else if ((playerValue > dealerValue) && (playerValue <= 21)) {
+    else if ((playerValue > dealerValue) && (playerValue <= 21)) { // Player Win
         console.warn("Player Win")
         document.getElementById("player-value").style.color = "#10bb10" // green
         document.getElementById("dealer-value").style.color = "#bb1010" // red
@@ -701,12 +712,17 @@ function testForWin() {
     }
     else if (playerValue == dealerValue) {
         console.warn("Push")
+        document.getElementById("player-value").style.height = "2.5rem"
+        document.getElementById("dealer-value").style.height = "2.5rem"
+        document.getElementById("dealer-value").style.color = "rgb(248 255 0)" // yellow
+        document.getElementById("player-value").style.color = "rgb(248 255 0)" // yellow
         bank += bet
         return "false"
     }
-    else if ((playerValue <= 21) && (dealerValue > 21)) {
+    else if ((playerValue <= 21) && (dealerValue > 21)) { // Player Win
         console.warn("Dealer Bust")
         document.getElementById("dealer-value").style.color = "#bb1010"
+        document.getElementById("player-value").style.color = "#10bb10"
         document.getElementById("player-value").style.height = "2.5rem"
         bank += (bet*2)
         incAmountWon(bet*2)
@@ -717,9 +733,10 @@ function testForWin() {
         incStreak()
         return "true"
     }
-    else if ((playerValue <= dealerValue) && (dealerValue <= 21)) {
+    else if ((playerValue <= dealerValue) && (dealerValue <= 21)) { // Dealer Win
         console.warn("Dealer Win")
         document.getElementById("dealer-value").style.color = "#10bb10"
+        document.getElementById("player-value").style.color = "#bb1010"
         document.getElementById("dealer-value").style.height = "2.5rem"
         incDealerWins()
         resetStreak()
@@ -1019,6 +1036,7 @@ function addFund() {
 
         console.log("New Value : "+bank)
         balance.innerHTML = "$"+bank+".00"
+        incFundAdded(fundToAddNum)
         document.getElementById("add-fund-debug").innerHTML = "Funds Added"
         document.getElementById("add-fund-debug").style.color = "white"
     }
@@ -1027,6 +1045,10 @@ function addFund() {
         document.getElementById("add-fund-debug").innerHTML = "Value must be a whole number."
         document.getElementById("add-fund-debug").style.color = "red"
     }
+}
+function copyStats() {
+    var statsToCopy = "Hands : "+hands+"\nPlayer Wins : "+playerWins+"\nDealer Wins : "+dealerWins+"\nPlayer Blackjacks : "+playerBlackjacks+"\nDealer Blackjacks : "+dealerBlackjacks+"\nDouble Downs Won : "+DubDwnWon+"\nCurrent Streak : "+streak+"\nAmount Won : $"+amountWon+".00\nFunds Added : $"+fundAddTot+".00\n\nTotal Balance : $"+bank+".00"
+    navigator.clipboard.writeText(statsToCopy)
 }
 
 // MENU //
