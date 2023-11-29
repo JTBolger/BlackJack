@@ -111,14 +111,23 @@ const deck = [
 //     '10H', '10H', '10H', '10H', '10H', 'AH', 'AH', 'AH', 'AH', 'AH',
 //   ];
 
+var amountToBet = 10
+var betIncSlider = document.getElementById("betInc")
+var betIncValue = document.getElementById("betIncValue")
+betIncValue.innerHTML = "$"+betIncSlider.value+".00"
+betIncSlider.oninput = function() {
+    betIncValue.innerHTML = "$"+this.value+".00"
+    console.log("betIncValue.value = "+betIncSlider.value)
+    amountToBet = parseInt(betIncSlider.value)
+    console.log("amountToBet = "+amountToBet)
+}
 
-
-function addBet(amount) {
-    if (bank < (bet + amount)) {
+function addBet() {
+    if (bank < (bet + amountToBet)) {
         console.error("bet amount exceeds bank amount")
     }
-    else if (bank >= (bet + amount)) {
-        bet = (bet + amount)
+    else if (bank >= (bet + amountToBet)) {
+        bet = (bet + amountToBet)
         betDisplay.innerHTML = "$"+bet+".00"
         console.log("amount after change = "+bet)
     }
@@ -129,12 +138,12 @@ function allIn() {
     betDisplay.innerHTML = "$"+bet+".00"
     console.log("amount after change = "+bet)
 }
-function subtractBet(amount) {
-    if ((bet - amount) <= 0) {
+function subtractBet() {
+    if ((bet - amountToBet) <= 0) {
         console.error("bet amount cannot be less than or equal to zero")
     }
-    else if ((bet - amount) > 0) {
-        bet = (bet - amount)
+    else if ((bet - amountToBet) > 0) {
+        bet = (bet - amountToBet)
         betDisplay.innerHTML = "$"+bet+".00"
         console.log("amount after change = "+bet)
     }
@@ -1064,6 +1073,8 @@ var addFundBody = document.getElementById("add-funds-body")
 var totalMoney = document.getElementById("total-money")
 var howToPlayButton = document.getElementById("how-to-play")
 var howToPlayBody = document.getElementById("how-to-play-body")
+var settingsButton = document.getElementById("settings")
+var settingsBody = document.getElementById("settings-body")
 
 let menuOpen = 0
 
@@ -1078,6 +1089,7 @@ function openMenu() {
         aboutButton.style.display = "block"
         addFundButton.style.display = "block"
         howToPlayButton.style.display = "block"
+        settingsButton.style.display = "block"
         menuOpen = 1
     }
 }
@@ -1112,6 +1124,9 @@ function closeMenu() {
     howToPlayButton.style.display = "none"
     howToPlayBody.style.display = "none"
     howToPlayButton.style.marginBottom = "0"
+    settingsButton.style.marginBottom = "0"
+    settingsBody.style.display = "none"
+    settingsButton.style.display = "none"
     menuOpen = 0
 }
 function openStats() {
@@ -1192,4 +1207,28 @@ function openHowToPlay() {
     coinHolder.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
     closeButton.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
     addFundButton.style.marginBottom = "100%"
+    settingsButton.style.display = "none"
+}
+function openSettings() {
+    console.log("Add Funds About")
+    coinHolder.style.width = "85%"
+    closeButton.style.width = "100%"
+    pokerChip.style.marginLeft = "-65%"
+    settingsButton.style.marginRight = "0"
+    settingsButton.style.marginBottom = "30rem"
+    settingsBody.style.opacity = "1"
+    settingsBody.style.display = "flex"
+    settingsBody.style.cursor = "auto"
+    settingsBody.style.height = "75%"
+    settingsBody.style.marginLeft = "-32.5rem"
+    statsButton.style.top = "-175%"
+    statsButton.style.display = "none"
+    addFundButton.style.display = "none"
+    aboutButton.style.top = "-175%"
+    aboutButton.style.display = "none"
+    closeButton.style.marginRight = "0"
+    coinHolder.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
+    closeButton.style.backgroundColor = "rgba(0, 0, 0, 0.425)"
+    // addFundButton.style.marginBottom = "100%"
+    howToPlayButton.style.display = "none"
 }

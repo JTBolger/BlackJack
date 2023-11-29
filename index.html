@@ -79,15 +79,27 @@
                             </div>
                         </div>
                     </div>
+                    <div id="settings" onclick="openSettings()">SETTINGS
+                        <div id="settings-body">
+                            <div id="settings-body2">
+                                <div id="field-1">
+                                    <p>Bet Increment :</p>
+                                    <input type="range" id="betInc" name="myRange" min="10" max="100" step="10" value="10">
+                                    <p id="betIncValue">$10.00</p>
+                                </div>
+                                <div id="field-2"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="close-menu-button" onclick="closeMenu()">CLOSE</div>
                 <div id="start" onclick="startGame()">START</div>
                 <div id="play-area">
                     <div id="bet-space">
-                        <div id="subtract-bet" onclick="subtractBet(10)">-</div>
+                        <div id="subtract-bet" onclick="subtractBet()">-</div>
                         <div id="bet"><div id="wager">$--.--</div></div>
                         <div id="confirm-bet" onclick="confirmBet()">BET</div>
-                        <div id="add-bet" onclick="addBet(10)">+</div>
+                        <div id="add-bet" onclick="addBet()">+</div>
                         <div id="all-in-bet" onclick="allIn()">ALL IN</div>
                     </div>
                     <div class="dealer-side">

@@ -323,7 +323,7 @@ img {
     user-select: none;
     cursor: pointer;
 }
-#stats, #about-the-project, #add-funds, #how-to-play {
+#stats, #about-the-project, #add-funds, #how-to-play, #settings {
     color: white;
     /* margin-right: 25%; */
     font: menu;
@@ -334,7 +334,7 @@ img {
     transition: 0.5s;
     /* margin-bottom: 100%; */
 }
-#stats-body, #project-body, #add-funds-body, #how-to-play-body {
+#stats-body, #project-body, #add-funds-body, #how-to-play-body, #settings-body {
     width: 80rem;
     height: 0rem;
     background-color: #23232391;
@@ -350,10 +350,11 @@ img {
     flex-direction: column;
     /* margin-left: 7%; */
 }
-.project-body2, #how-to-play-body2 {
+.project-body2, #how-to-play-body2, #settings-body2 {
     width: 75%;
     height: 90%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding: 0.5rem;
     font: menu;
     font-size: 1.25rem;
@@ -425,4 +426,18 @@ img {
 .HTP-example img {
     height: 15rem;
     border-radius: 10px;
+}
+
+#field-1, #field-2 {
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+#field-1 {
+    background-color: #23232385;
+}
+#field-2 {
+    background-color: #36363685;
 }
