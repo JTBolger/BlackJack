@@ -36,7 +36,7 @@ function flipCard() {
     card.style.transform = "rotateY(180deg)"
 }
 
-var hands = 0
+var hands = 0;
 var playerWins = 0
 var dealerWins = 0
 var playerBlackjacks = 0
@@ -92,7 +92,7 @@ const deck = [
     '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', '10D', 'JD', 'QD', 'KD', 'AD',
     '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', '10H', 'JH', 'QH', 'KH', 'AH',
     '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S', 'JS', 'QS', 'KS', 'AS'
-  ];
+];
   
 // Test Teck //
 // const deck = [
@@ -111,7 +111,7 @@ const deck = [
 //     '10H', '10H', '10H', '10H', '10H', 'AH', 'AH', 'AH', 'AH', 'AH',
 //   ];
 
-var amountToBet = 10
+var amountToBet = 2
 var betIncSlider = document.getElementById("betInc")
 var betIncValue = document.getElementById("betIncValue")
 betIncValue.innerHTML = "$"+betIncSlider.value+".00"
@@ -123,7 +123,11 @@ betIncSlider.oninput = function() {
 }
 
 function addBet() {
-    if (bank < (bet + amountToBet)) {
+    if ((bet + amountToBet) < 10) {
+        bet = 10
+        betDisplay.innerHTML = "$"+bet+".00"
+    }
+    else if (bank < (bet + amountToBet)) {
         console.error("bet amount exceeds bank amount")
     }
     else if (bank >= (bet + amountToBet)) {
@@ -133,13 +137,17 @@ function addBet() {
     }
 }
 function allIn() {
-    var betTempR = bank % 10
+    var betTempR = bank % 2
     bet = bank - betTempR
     betDisplay.innerHTML = "$"+bet+".00"
     console.log("amount after change = "+bet)
 }
 function subtractBet() {
-    if ((bet - amountToBet) <= 0) {
+    if (bet == 10) {
+        bet == 0
+        betDisplay.innerHTML = "$"+bet+".00"
+    }
+    else if ((bet - amountToBet) <= 0) {
         console.error("bet amount cannot be less than or equal to zero")
     }
     else if ((bet - amountToBet) > 0) {
@@ -623,7 +631,7 @@ function STAY() {
         console.log("dCard3 = "+dCard3+"\ndealerValue = "+dealerValue)
     }
     setTimeout(testForWin, 2000)
-    setTimeout(resetGame, 3000)
+    setTimeout(resetGame, 4000)
 }
 var doubled = 0
 var doubleButton = document.getElementById("double-down")
